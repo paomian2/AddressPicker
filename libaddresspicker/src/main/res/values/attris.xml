@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="AddressPickerView">
+        <attr name="dataMode" format="enum">
+            <enum name="def" value="0"/>
+            <enum name="outside" value="1"/>
+        </attr>
+        <attr name="tabIndicatorColor" format="color"/>
+    </declare-styleable>
+</resources>

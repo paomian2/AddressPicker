@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        //加上这写代码，解决图片库PictureSelector引入问题：More than one file was found with OS independent path 'META-INF/rxjava.prope
+        exclude 'META-INF/rxjava.properties'
+    }
+
+}
+
+dependencies {
+    //noinspection GradleDependency,GradleaDependency,GradleCompatible
+    implementation "com.android.support:recyclerview-v7:27.0.1"
+    //noinspection GradleDependency
+    implementation "com.android.support:design:27.0.1"
+    //noinspection GradleDependency
+    implementation "com.android.support:support-v4:27.0.1"
+    //noinspection GradleDependency
+    implementation "com.android.support:appcompat-v7:27.0.1"
+    //noinspection GradleDependency
+    implementation "com.squareup.retrofit2:converter-gson:2.3.0"
+}

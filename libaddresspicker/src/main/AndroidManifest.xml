@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.linxz.addresspicker">
+
+    <application>
+        <activity android:name="com.linxz.addresspicker.AddressPickerSimpleActivity" android:theme="@style/dialogstyle"/>
+    </application>
+
+</manifest>
