@@ -56,3 +56,5 @@ class MainActivity : AppCompatActivity() {
 ```
 
 效果图
+
+![image](https://raw.githubusercontent.com/paomian2/AddressPicker/master/screen/地址选择器.gif)
