@@ -2,11 +2,10 @@
 
 ##### 一、思路
 
-  看页面效果可以知道，上层Tab为选择的地址，下层为省、市、区、街道等数据，那么这种效果可以使用TabLayout+Fragment实现。
-  一级数据一个Tab+Fragment,Tab为选择的或对应的数据含义(即：Tab(省)、Tab(市)、Tab(区)、Tab(街道)）， Fragment为对应的数据列表。
-  初始化的时候自动生成一个Tab+Fragment,往后选择一个地址如(广西壮族自治区)生成一个新的Tab+Fragment,如果重新选择地址，先清空对应的下级Tab+Fragment再按原来的逻辑生成新的Tab+Fragment。
-  例如：开始的时候选择广西壮族自治区->贵港市->平南县，这时候应该分别生成省Tab+Fragment、市Tab+Fragment、区/县Tab+Fragment这三个，重新选择省(北京)的时候，市级、区/县级的Tab+Fragment都移除，
-  然后再重新生成省(北京)对应的市级Tab+Fragment，然后使用ViewPager切换到生成的Fragment。
+看页面效果可以知道，上层Tab为选择的地址，下层为省、市、区、街道等数据，那么这种效果可以使用TabLayout+Fragment+ViewPager实现。一级数据一个Tab+Fragment,Tab为选择的或对应的数据含义(即：Tab(省)、Tab(市)、Tab(区)、Tab(街道)）， Fragment为对应的数据列表。
+初始化的时候自动生成一个Tab+Fragment,往后选择一个地址如(广西壮族自治区)生成一个新的Tab+Fragment,如果重新选择地址，先清空对应的下级Tab+Fragment再按原来的逻辑生成新的Tab+Fragment。
+例如：开始的时候选择广西壮族自治区->贵港市->平南县，这时候应该分别生成省Tab+Fragment、市Tab+Fragment、区/县Tab+Fragment这三个，重新选择省(北京)的时候，市级、区/县级的Tab+Fragment都移除，
+然后再重新生成省(北京)对应的市级Tab+Fragment，然后使用ViewPager切换到生成的Fragment。
 
   生成Tab+Fragment关键代码：
 ```
